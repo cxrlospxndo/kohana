@@ -16,7 +16,13 @@ class User_Model extends Model
         $query = $this->db->get($this->user_table); 
         return $query->result_array();
     }
-   
+    public function find_by_email($email)
+    {
+        $this->db->where('email', $email);
+        $query = $this->db->get($this->user_table); 
+        return $query->result_array();
+    }   
+
     public function update($id,$data)
     {
         $this->db->update($this->user_table, $data, array('id' => $id));

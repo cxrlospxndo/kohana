@@ -1,5 +1,5 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
-     
+
 class User_Controller extends Controller
 {
     private $user_model; 
@@ -9,7 +9,8 @@ class User_Controller extends Controller
     private $create_view;
     private $show_view;
     private $login_view;
-  
+    //private $session;
+
     public function __construct()    
     { 
         parent::__construct();
@@ -19,6 +20,7 @@ class User_Controller extends Controller
         $this->show_view = new View('show');
         $this->create_view = new View('create');
         $this->login_view = new View('login');
+        //$this->session = Session::instance();
     }
   
     public function index()
@@ -28,6 +30,7 @@ class User_Controller extends Controller
          
     private function show_users_list()
     {
+        $_SESSION['id']= -1;
         $users_list = $this->user_model->get_list(); 
         $this->list_view->set('users_list',$users_list);
         $this->list_view->render(TRUE); 
@@ -37,6 +40,8 @@ class User_Controller extends Controller
     {
         $user_data = $this->user_model->read($id);
         $user_urls = $this->url_model->read($id);
+
+        $_SESSION['id']= $id;
 
         $this->show_view->set('user_id',$user_data[0]->id);
         $this->show_view->set('name',$user_data[0]->name);
@@ -54,7 +59,8 @@ class User_Controller extends Controller
             'password'  => $this->input->post('password')
         );
         $this->user_model->create($user_data);
-        url::redirect('user');
+        $user_data = $this->user_model->find_by_email($this->input->post('email'));
+        url::redirect('user/show/'.$user_data[0]->id);
     }
 
     public function show_create_editor()

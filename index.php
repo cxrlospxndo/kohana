@@ -6,6 +6,7 @@
  *
  * @see http://kohanaphp.com
  */
+session_start();
 
 /**
  * Define the website environment status. When this flag is set to TRUE, some

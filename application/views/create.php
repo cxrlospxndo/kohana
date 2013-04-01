@@ -4,7 +4,6 @@
 <title>url shortener</title>
 </head>
 <body>
-
 <?php 
     echo html::anchor('user', 'Users'); 
     echo form::open('user/create'); 
