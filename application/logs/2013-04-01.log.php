@@ -104,3 +104,4 @@
 2013-04-01 14:52:17 -05:00 --- error: Uncaught Kohana_404_Exception: The page you requested, assets/js/bootstrap.min.js, could not be found. in file system/core/Kohana.php on line 841
 2013-04-01 14:52:26 -05:00 --- error: Uncaught Kohana_404_Exception: The page you requested, assets/css/bootstrap.min.css, could not be found. in file system/core/Kohana.php on line 841
 2013-04-01 14:52:26 -05:00 --- error: Uncaught Kohana_404_Exception: The page you requested, assets/js/bootstrap.min.js, could not be found. in file system/core/Kohana.php on line 841
+2013-04-01 18:55:28 -05:00 --- error: Uncaught PHP Error: Missing argument 1 for Redirect_Controller::index() in file application/controllers/redirect.php on line 13

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>url shortener</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+
     <h1>Create new user OR log in with a existing one:</h1>
     <table>
     <?php
